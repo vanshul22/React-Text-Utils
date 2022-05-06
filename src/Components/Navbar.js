@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 export default function Navbar(props) {
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
             <div className="container-fluid">
                 <a className="navbar-brand" href="/">
                     {props.title}
@@ -40,7 +41,20 @@ export default function Navbar(props) {
                         </li>
 
                     </ul>
+                    <div className="form-check form-switch mx-3">
+                            <input
+                                className="form-check-input"
+                                type="checkbox"
+                                id="flexSwitchCheckDefault"
+                                onClick={props.toggleMode}
+                            />
+                            <label className={`form-check-label text-${props.mode==="dark"?"white":"dark"}`} htmlFor="flexSwitchCheckDefault">
+                                Toggle Dark Mode
+                            </label>
+                        </div>
                     <form className="d-flex">
+                        
+
                         <input
                             className="form-control me-2"
                             type="search"
@@ -48,7 +62,7 @@ export default function Navbar(props) {
                             aria-label="Search"
                         />
                         <button
-                            className="btn btn-outline-success"
+                            className="btn btn-outline-info"
                             type="submit"
                         >
                             Search
