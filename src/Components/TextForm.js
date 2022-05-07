@@ -25,10 +25,10 @@ export default function TextForm(props) {
         // Checking Palindrome here
         text.split("").reverse().join("");
         if (text === text.split("").reverse().join("")) {
-        props.showAlert("Its a Palindrome", "success");
-    } else {
-        props.showAlert("Its not a Palindrome", "success");
-    }
+            props.showAlert("Its a Palindrome", "success");
+        } else {
+            props.showAlert("Its not a Palindrome", "success");
+        }
     };
     const handleCopy = () => {
         let text = document.getElementById("myBox");
@@ -47,8 +47,7 @@ export default function TextForm(props) {
     const [text, setText] = useState("");
 
     return (
-        
-        <div style={{color:props.mode==="dark"?"white":"black"}}>
+        <div style={{ color: props.mode === "dark" ? "white" : "black" }}>
             <div className="m-3">
                 <label htmlFor="myBox" className="form-label">
                     <h2>Enter the text to analyze</h2>
@@ -60,7 +59,7 @@ export default function TextForm(props) {
                     value={text}
                     placeholder="Enter text here..."
                     onChange={textHandleOnchange}
-                    style={{backgroundColor:props.mode==="dark"?"#101214":"white",color:props.mode==="dark"?"white":"black"}}
+                    style={{ backgroundColor: props.mode === "dark" ? "#101214" : "white", color: props.mode === "dark" ? "white" : "black" }}
                 />
                 <button onClick={handleUpperCaseClick} className='btn btn-primary m-3'>Upper Case</button>
                 <button onClick={handleLowerCaseClick} className='btn btn-dark m-3'>Lower Case</button>
@@ -74,7 +73,7 @@ export default function TextForm(props) {
                 <p>{text.split(" ").length} Words, {text.length} Characters</p>
                 <p>{0.008 * text.split(" ").length} Minutes to read.</p>
                 <h2>Preview</h2>
-                <p>{text.length===0?"Enter something to Preview it here...":text}</p>
+                <p>{text.length === 0 ? "Enter something to Preview it here..." : text}</p>
             </div>
         </div>
     )
