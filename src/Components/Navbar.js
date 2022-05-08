@@ -1,7 +1,8 @@
-// import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+// To use React Rouer we have to use Link.
 import { Link } from 'react-router-dom';
 export default function Navbar(props) {
+
     return (
         <>
             <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
@@ -26,7 +27,7 @@ export default function Navbar(props) {
                     >
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link id='home' className="nav-link active" to="/">
+                                <Link id='home' className="nav-link" to="/">
                                     Home
                                 </Link>
                             </li>
@@ -69,7 +70,7 @@ export default function Navbar(props) {
 }
 
 // PropTypes we can set the type of our props here.
-Navbar.propTypes = { title: PropTypes.string }
+Navbar.propTypes = { title: PropTypes.string };
 // If we need something as important value set isRequired. It will not work in default values.
 // Navbar.propTypes = { title: PropTypes.string.isRequired }
 

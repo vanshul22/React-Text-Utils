@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Fixed Arrow colors for dark mode of about page */
+.accordion-button::after {
+  filter: invert(1);
+}
